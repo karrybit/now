@@ -33,10 +33,16 @@ $ protoc --go_out=. --go-grpc_out=. proto/*.proto
 # generate {go_package_path}/{proto_file_name}.pb.go
 ```
 
+## Run
+```sh
+$ go run server/server.go
+$ go run client/client.go
+```
+
 #### Reference
 - https://blog.golang.org/protobuf-apiv2
 
-## what i don't understand
+#### what i don't understand
 if i exec command below when cannot find packages, i can build and run.
 ```sh
 $ go mod tidy
