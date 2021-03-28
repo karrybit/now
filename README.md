@@ -43,7 +43,7 @@ $ go run client/client.go
 ```
 
 #### Reference
-- https://blog.golang.org/protobuf-apiv2
+https://blog.golang.org/protobuf-apiv2
 
 #### what i don't understand
 if i exec command below when cannot find packages, i can build and run.
