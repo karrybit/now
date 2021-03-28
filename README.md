@@ -45,13 +45,13 @@ $ go run client/client.go
 ## Reference
 https://blog.golang.org/protobuf-apiv2
 
-## what i don't understand
-#### cannot find packages
-i exec command below. then i can build and run.
+## What I don't understand
+#### Cannot find packages
+I executed command below. Then I could build and run.
 ```sh
 $ go mod tidy
 $ go mod vendor
 ```
 
-#### relationship between installed package and command to be executed
-i installed proto, protoc-gen-go and grpc, but I don't know which one I really needed
+#### Relationship between installed package and command to be executed
+I installed proto, protoc-gen-go and grpc, but I don't know which one I really needed.
