@@ -1,6 +1,6 @@
 # Now count the time
 
-## Requires
+## Installation
 ```sh
 $ go get -u github.com/golang/protobuf/{proto,protoc-gen-go}
 $ go get -u google.golang.org/grpc
