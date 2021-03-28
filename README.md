@@ -32,8 +32,8 @@ protoc-gen-go-grpc 1.0.1
 generate 2 go files.
 ```sh
 $ protoc --go_out=. --go-grpc_out=. proto/*.proto
-# generate {go_package_path}/{proto_file_name}_grpc.pb.go
-# generate {go_package_path}/{proto_file_name}.pb.go
+# generated {go_package_path}/{proto_file_name}_grpc.pb.go
+# generated {go_package_path}/{proto_file_name}.pb.go
 ```
 
 ## Run
