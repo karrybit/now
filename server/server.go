@@ -3,7 +3,7 @@ package main
 import (
 	"log"
 	"net"
-	"now/pb/ticker"
+	"now/pb/now"
 	"time"
 
 	"google.golang.org/grpc"
@@ -11,11 +11,11 @@ import (
 	"google.golang.org/protobuf/types/known/timestamppb"
 )
 
-type TickServerImpl struct {
-	ticker.UnimplementedTickServer
+type NowServerImpl struct {
+	now.UnimplementedNowServer
 }
 
-func (t *TickServerImpl) Now(req *emptypb.Empty, stream ticker.Tick_NowServer) error {
+func (t *NowServerImpl) Tick(req *emptypb.Empty, stream now.Now_TickServer) error {
 	log.Printf("requested %s\n", req.String())
 	for _ = range time.NewTicker(1 * time.Second).C {
 		if err := stream.Send(&timestamppb.Timestamp{}); err != nil {
@@ -33,8 +33,8 @@ func main() {
 	}
 
 	server := grpc.NewServer()
-	var tickServerImple TickServerImpl
-	ticker.RegisterTickServer(server, &tickServerImple)
+	var nowServerImple NowServerImpl
+	now.RegisterNowServer(server, &nowServerImple)
 
 	if err := server.Serve(lis); err != nil {
 		log.Fatalln(err)

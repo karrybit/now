@@ -4,7 +4,7 @@ import (
 	"context"
 	"io"
 	"log"
-	"now/pb/ticker"
+	"now/pb/now"
 
 	"google.golang.org/grpc"
 	"google.golang.org/protobuf/types/known/emptypb"
@@ -21,8 +21,8 @@ func main() {
 	}
 	defer conn.Close()
 
-	client := ticker.NewTickClient(conn)
-	stream, err := client.Now(context.Background(), &emptypb.Empty{})
+	client := now.NewNowClient(conn)
+	stream, err := client.Tick(context.Background(), &emptypb.Empty{})
 	if err != nil {
 		log.Fatal(err)
 	}
