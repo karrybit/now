@@ -7,18 +7,21 @@ $ go get -u google.golang.org/grpc
 ```
 
 ## Generate gRPC client and server
-descript output package path in proto.
-```proto
-syntax = "proto3"
+```now.proto
+syntax = "proto3";
 package now;
-option go_package = "pb/~~~";
 
-import "~~~"
+option go_package = "pb/now";
 
-...
+import "google/protobuf/timestamp.proto";
+import "google/protobuf/empty.proto";
+
+service Now {
+    rpc Tick(google.protobuf.Empty) returns (stream google.protobuf.Timestamp) {}
+}
 ```
 
-check versions
+check protoc-gen-go and protoc-gen-go-grpc version.
 ```sh
 $ ~/go/bin/protoc-gen-go --version
 protoc-gen-go v1.26.0
