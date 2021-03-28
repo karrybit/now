@@ -1,4 +1,4 @@
-# Now server written in gRPC
+# Now count the time
 
 ## Requires
 ```sh
